@@ -9,10 +9,15 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] Transform groundCheck;
     [SerializeField] LayerMask ground;
 
+    Animator anim;
+    private float movementValueX;
+    private bool isOnGround;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -34,7 +39,8 @@ public class PlayerMovement : MonoBehaviour
             rb.linearVelocity = new Vector3(rb.linearVelocity.x, 5f, rb.linearVelocity.z);
         }
 
-
+        anim.SetFloat("Speed", Mathf.Abs(movementValueX));
+        anim.SetBool("IsOnGround", isOnGround);
 
 
     }
