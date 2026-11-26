@@ -17,7 +17,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        anim = GetComponent<Animator>();
+        anim = GetComponentInChildren<Animator>();
     }
 
     // Update is called once per frame
@@ -39,8 +39,10 @@ public class PlayerMovement : MonoBehaviour
             rb.linearVelocity = new Vector3(rb.linearVelocity.x, 5f, rb.linearVelocity.z);
         }
 
-        anim.SetFloat("Speed", Mathf.Abs(movementValueX));
-        anim.SetBool("IsOnGround", isOnGround);
+        bool moving = horizontalInput != 0f || verticalInput != 0f;
+        anim.SetBool("isRunning", moving && IsGrounded());
+
+
 
 
     }
@@ -48,6 +50,7 @@ public class PlayerMovement : MonoBehaviour
     void Jump()
     {
         rb.linearVelocity = new Vector3(rb.linearVelocity.x, jumpForce, rb.linearVelocity.z);
+        anim.SetTrigger("Jump");
     }
 
     private void OnCollisionEnter(Collision collision)
