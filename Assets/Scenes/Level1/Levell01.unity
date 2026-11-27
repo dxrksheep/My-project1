@@ -5010,6 +5010,14 @@ PrefabInstance:
       propertyPath: 'waypoints.Array.data[1]'
       value: 
       objectReference: {fileID: 258082643}
+    - target: {fileID: 4061236220390585872, guid: c388a01e21d6c854398ba8adc79e979e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3.005376
+      objectReference: {fileID: 0}
+    - target: {fileID: 4061236220390585872, guid: c388a01e21d6c854398ba8adc79e979e, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3.4773495
+      objectReference: {fileID: 0}
     - target: {fileID: 5328715463665023607, guid: c388a01e21d6c854398ba8adc79e979e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.36
@@ -5848,7 +5856,8 @@ PrefabInstance:
       value: cloud 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: -655515190766560270, guid: d2fcc1bef2fd0164198a69a952c96484, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d2fcc1bef2fd0164198a69a952c96484, type: 3}
